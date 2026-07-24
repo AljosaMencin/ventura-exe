@@ -1,11 +1,24 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
-const PROJECTS = [
-  { title: "Project One", type: "Album artwork" },
-  { title: "Project Two", type: "Visual identity" },
-  { title: "Project Three", type: "Music video" },
-  { title: "Project Four", type: "Merch & packaging" },
+const WORK = [
+  { src: "/work/01.jpg", title: "Emran", tag: "EP Cover" },
+  { src: "/work/02.jpg", tag: "Single Cover" },
+  { src: "/work/03.jpg", tag: "Album Cover" },
+  { src: "/work/04.jpg", tag: "Single Cover" },
+  { src: "/work/05.jpg", tag: "Cover Art" },
+  { src: "/work/06.jpg", tag: "Cover Art" },
+  { src: "/work/07.jpg", tag: "Album Cover" },
+  { src: "/work/08.jpg", tag: "Cover Art" },
+  { src: "/work/09.jpg", tag: "Cover Art" },
+  { src: "/work/10.jpg", tag: "Cover Art" },
+  { src: "/work/11.jpg", tag: "Cover Art" },
+  { src: "/work/12.jpg", tag: "Artwork" },
+  { src: "/work/13.jpg", tag: "Cover Art" },
+  { src: "/work/14.jpg", title: "Zorica", tag: "Cover Art" },
+  { src: "/work/15.jpg", tag: "Promo Artwork" },
+  { src: "/work/16.jpg", tag: "Artwork" },
+  { src: "/work/17.jpg", title: "Toonies", tag: "Cover Art" },
+  { src: "/work/18.jpg", title: "Toonies", tag: "Cover Art — Alt" },
 ];
 
 const SelectedProjects = () => {
@@ -21,26 +34,29 @@ const SelectedProjects = () => {
         Selected work
       </motion.h2>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2">
-        {PROJECTS.map((project, i) => (
+      <div className="mt-12 columns-1 gap-6 sm:columns-2 lg:columns-3">
+        {WORK.map((piece, i) => (
           <motion.a
-            key={project.title}
+            key={piece.src}
             href="#contact"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: i * 0.08 }}
-            className="group block"
+            transition={{ duration: 0.6, delay: (i % 6) * 0.06 }}
+            className="group mb-6 block break-inside-avoid overflow-hidden rounded-lg border border-border bg-card"
           >
-            <div className="placeholder-fill relative aspect-square overflow-hidden rounded-lg border border-border bg-card">
-              <span className="absolute bottom-4 left-4 font-mono text-xs text-muted-foreground">
-                0{i + 1}
-              </span>
-              <ArrowUpRight className="absolute right-4 top-4 h-5 w-5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-hover:text-primary" />
-            </div>
-            <div className="mt-4 flex items-baseline justify-between">
-              <h3 className="text-lg font-light text-foreground">{project.title}</h3>
-              <span className="text-sm text-muted-foreground">{project.type}</span>
+            <div className="relative">
+              <img
+                src={piece.src}
+                alt={piece.title ? `${piece.title} — ${piece.tag}` : piece.tag}
+                loading="lazy"
+                className="block w-full transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="absolute inset-x-4 bottom-4 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                {piece.title && <p className="text-sm text-foreground">{piece.title}</p>}
+                <p className="font-mono text-xs uppercase tracking-[0.15em] text-primary">{piece.tag}</p>
+              </div>
             </div>
           </motion.a>
         ))}
