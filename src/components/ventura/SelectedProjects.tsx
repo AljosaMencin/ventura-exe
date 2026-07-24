@@ -17,6 +17,7 @@ const WORK = [
   { src: "/work/14.jpg", title: "Zorica", tag: "Cover Art" },
   { src: "/work/15.jpg", tag: "Promo Artwork" },
   { src: "/work/16.jpg", tag: "Artwork" },
+  { src: "/work/17.jpg", title: "Eskina — Alive", tag: "Vinyl Label" },
 ];
 
 const SelectedProjects = () => {
