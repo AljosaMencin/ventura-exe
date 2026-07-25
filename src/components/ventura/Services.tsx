@@ -49,26 +49,27 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group flex min-h-[20rem] flex-col rounded-lg border border-border bg-background p-8 transition-colors duration-300 hover:border-primary hover:bg-primary"
+              className="group flex flex-col justify-between gap-6 rounded-lg border border-border bg-background p-6 transition-colors duration-300 hover:border-primary hover:bg-primary"
             >
               <span className="font-mono text-xs text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/70">
                 {number}
               </span>
 
-              <h3 className="mt-6 text-5xl font-light leading-[1.05] tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary-foreground sm:text-6xl">
-                {title}
-              </h3>
-
-              <ul className="mt-auto space-y-1.5 pt-8">
-                {items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/80"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <h3 className="text-3xl font-light tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary-foreground sm:text-4xl">
+                  {title}
+                </h3>
+                <ul className="mt-4 space-y-1.5">
+                  {items.map((item) => (
+                    <li
+                      key={item}
+                      className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/80"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           ))}
         </div>
