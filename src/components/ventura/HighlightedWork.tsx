@@ -27,7 +27,7 @@ const PROJECTS = [
   },
   {
     slug: "prbit",
-    client: "prbit_records",
+    client: "Prbit Records",
     title: "Tekno Eurooppa EP — Konerytmi",
     others: 5,
     process:
@@ -62,10 +62,9 @@ const HighlightedWork = () => {
               <span>
                 0{i + 1} <span className="text-border">/</span> 0{PROJECTS.length}
               </span>
-              <span className="text-primary">{project.client}</span>
             </div>
 
-            <div className="overflow-hidden rounded-lg border border-border bg-card">
+            <div className="w-full max-w-md overflow-hidden rounded-lg border border-border bg-card sm:max-w-lg">
               <img
                 src={`/work/${project.slug}/main.jpg`}
                 alt={project.title}
@@ -75,7 +74,8 @@ const HighlightedWork = () => {
             </div>
 
             <div className="mt-8 max-w-2xl">
-              <h3 className="text-2xl font-light text-foreground sm:text-3xl">{project.title}</h3>
+              <h3 className="text-2xl font-light text-foreground sm:text-3xl">{project.client}</h3>
+              <p className="mt-1 font-mono text-xs uppercase tracking-[0.15em] text-primary">{project.title}</p>
               <p className="mt-4 text-pretty text-sm font-light leading-relaxed text-muted-foreground">
                 {project.process}
               </p>
