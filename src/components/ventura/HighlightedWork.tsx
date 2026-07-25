@@ -64,20 +64,16 @@ const WorkCase = ({ project, index, total }: { project: Project; index: number; 
       transition={{ duration: 0.7 }}
       className={index > 0 ? "border-t border-border pt-24" : ""}
     >
-      <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
-        0{index + 1} <span className="text-border">/</span> 0{total}
-      </span>
-
-      <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,340px)_1fr] lg:items-start">
+      <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
-          <h3 className="text-2xl font-light text-foreground sm:text-3xl">{project.client}</h3>
-          <p className="mt-1 font-mono text-xs uppercase tracking-[0.15em] text-primary">{project.title}</p>
-          <p className="mt-4 text-pretty text-sm font-light leading-relaxed text-muted-foreground">
+          <h3 className="text-3xl font-light text-foreground sm:text-4xl">{project.client}</h3>
+          <p className="mt-2 font-mono text-xs uppercase tracking-[0.15em] text-primary">{project.title}</p>
+          <p className="mt-6 max-w-md text-pretty text-base font-light leading-relaxed text-muted-foreground">
             {project.process}
           </p>
         </div>
 
-        <div className="mx-auto w-full max-w-md">
+        <div className="w-full">
           <div className="relative aspect-square overflow-hidden rounded-lg border border-border bg-card">
             <AnimatePresence mode="wait">
               <motion.img
