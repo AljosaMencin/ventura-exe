@@ -12,6 +12,14 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
+    slug: "inner-circle",
+    client: "Inner Circle",
+    title: "What Ya Say? — Harmonia",
+    others: 4,
+    process:
+      "Inner Circle needed a system that could scale past a single release without a redesign every time. We built one label template around their circle-of-hands mark — fixed layout, fixed hierarchy — and let the catalogue number and colourway do the differentiating from ICR001 onward. Cream for the debut, acid green for the follow-up: same bones, new mood every time.",
+  },
+  {
     slug: "remedy",
     client: "Remedy",
     title: "Sick Flow",
