@@ -4,21 +4,21 @@ import { Palette, Film, Fingerprint } from "lucide-react";
 const SERVICES = [
   {
     icon: Palette,
+    number: "01",
     title: "Artwork",
     items: ["Album covers", "Single art", "Merch graphics"],
-    image: "/work/remedy/main.jpg",
   },
   {
     icon: Film,
+    number: "02",
     title: "Video",
     items: ["Music videos", "Visualizers", "Social edits"],
-    image: "/work/prbit/main.jpg",
   },
   {
     icon: Fingerprint,
+    number: "03",
     title: "Visual Identity",
     items: ["Brand systems", "Logo & type", "Rollout guidelines"],
-    image: "/work/inner-circle/main.jpg",
   },
 ];
 
@@ -46,29 +46,30 @@ const Services = () => {
         </motion.h2>
 
         <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
-          {SERVICES.map(({ icon: Icon, title, items, image }, i) => (
+          {SERVICES.map(({ icon: Icon, number, title, items }, i) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative flex min-h-[22rem] flex-col justify-end overflow-hidden bg-background p-8"
+              className="group relative min-h-[22rem] overflow-hidden bg-background p-8 transition-colors duration-300 hover:bg-card"
             >
-              <img
-                src={image}
-                alt=""
+              <Icon
                 aria-hidden
-                loading="lazy"
-                className="absolute inset-0 h-full w-full scale-100 object-cover opacity-25 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-70 group-hover:grayscale-0"
+                strokeWidth={0.75}
+                className="pointer-events-none absolute -right-8 -top-8 h-44 w-44 text-primary/[0.06] transition-all duration-500 ease-out group-hover:-right-4 group-hover:-top-4 group-hover:text-primary/20 group-hover:rotate-6"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/10" />
 
-              <div className="relative">
+              <div className="relative flex items-center justify-between">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 text-primary">
                   <Icon className="h-5 w-5" strokeWidth={1.5} />
                 </span>
-                <h3 className="mt-6 text-xl font-light text-foreground">{title}</h3>
+                <span className="font-mono text-xs text-muted-foreground">{number}</span>
+              </div>
+
+              <div className="relative mt-32">
+                <h3 className="text-xl font-light text-foreground">{title}</h3>
                 <ul className="mt-4 space-y-2">
                   {items.map((item) => (
                     <li key={item} className="text-sm text-muted-foreground">
