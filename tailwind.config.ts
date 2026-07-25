@@ -55,9 +55,13 @@ export default {
       },
       keyframes: {
         "fade-in": { from: { opacity: "0", transform: "translateY(12px)" }, to: { opacity: "1", transform: "translateY(0)" } },
+        "spin-slow": { from: { transform: "rotate(0deg)" }, to: { transform: "rotate(360deg)" } },
+        "pulse-slow": { "0%, 100%": { opacity: "0.5" }, "50%": { opacity: "1" } },
       },
       animation: {
         "fade-in": "fade-in 0.7s cubic-bezier(0.22,1,0.36,1) both",
+        "spin-slow": "spin-slow 18s linear infinite",
+        "pulse-slow": "pulse-slow 5s ease-in-out infinite",
       },
     },
   },
