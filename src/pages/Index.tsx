@@ -1,7 +1,7 @@
 import Nav from "@/components/ventura/Nav";
 import Hero from "@/components/ventura/Hero";
 import StudioReel from "@/components/ventura/StudioReel";
-import SelectedProjects from "@/components/ventura/SelectedProjects";
+import HighlightedWork from "@/components/ventura/HighlightedWork";
 import Services from "@/components/ventura/Services";
 import Testimonial from "@/components/ventura/Testimonial";
 import Contact from "@/components/ventura/Contact";
@@ -14,7 +14,7 @@ const Index = () => {
       <main>
         <Hero />
         <StudioReel />
-        <SelectedProjects />
+        <HighlightedWork />
         <Services />
         <Testimonial />
         <Contact />
