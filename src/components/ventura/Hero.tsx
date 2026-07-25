@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-20">
-      {/* Faint wireframe globe motif — abstract callback to the brand mark, not the final asset */}
+      {/* Faint wireframe globe motif: an abstract callback to the brand mark, not the final asset */}
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-40 -left-40 h-[32rem] w-[32rem] rounded-full opacity-[0.07]"
@@ -15,7 +15,7 @@ const Hero = () => {
         }}
       />
 
-      <div className="container relative">
+      <div className="container relative flex flex-col items-center text-center">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-8 max-w-xl text-pretty text-lg font-light text-muted-foreground"
         >
-          Artwork, video and visual identity — from sound to vision. We build the
+          Artwork, video and visual identity, from sound to vision. We build the
           visual world around your music, end to end.
         </motion.p>
 
@@ -48,7 +48,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-12 flex flex-wrap items-center gap-4"
+          className="mt-12 flex flex-wrap items-center justify-center gap-4"
         >
           <Button asChild size="lg">
             <a href="#contact">Start a project</a>

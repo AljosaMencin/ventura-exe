@@ -19,7 +19,7 @@ const StudioReel = () => {
           <Play className="ml-0.5 h-6 w-6" fill="currentColor" />
         </button>
         <span className="absolute bottom-6 left-6 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          Studio reel — placeholder
+          Studio reel (placeholder)
         </span>
       </motion.div>
     </section>

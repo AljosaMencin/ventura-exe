@@ -14,10 +14,10 @@ const PROJECTS: Project[] = [
   {
     slug: "inner-circle",
     client: "Inner Circle",
-    title: "What Ya Say? — Harmonia",
+    title: "What Ya Say? (Harmonia)",
     others: 4,
     process:
-      "Inner Circle needed a system that could scale past a single release without a redesign every time. We built one label template around their circle-of-hands mark — fixed layout, fixed hierarchy — and let the catalogue number and colourway do the differentiating from ICR001 onward. Cream for the debut, acid green for the follow-up: same bones, new mood every time.",
+      "Inner Circle needed a system that could scale past a single release without a redesign every time. We built one label template around their circle-of-hands mark (fixed layout, fixed hierarchy) and let the catalogue number and colourway do the differentiating from ICR001 onward. Cream for the debut, acid green for the follow-up: same bones, new mood every time.",
   },
   {
     slug: "remedy",
@@ -25,31 +25,31 @@ const PROJECTS: Project[] = [
     title: "Sick Flow",
     others: 4,
     process:
-      "Remedy wanted a label mark that could carry a bootleg edit without disappearing into the crate. We built the identity around a single loose, gnashing character — inked by hand, then vectorised just enough to survive small pressings — and paired it with a lettering pass that reads fast on a dim dancefloor. Green-on-black kept every variant instantly recognisable across a run of one-offs.",
+      "Remedy wanted a label mark that could carry a bootleg edit without disappearing into the crate. We built the identity around a single loose, gnashing character, inked by hand and then vectorised just enough to survive small pressings, and paired it with a lettering pass that reads fast on a dim dancefloor. Green-on-black kept every variant instantly recognisable across a run of one-offs.",
   },
   {
     slug: "subsoil",
     client: "Subsoil Records",
-    title: "Work It EP — Alex Dyer",
+    title: "Work It EP (Alex Dyer)",
     others: 4,
     process:
-      "Subsoil's droplet mark is the whole brand in miniature, so the brief was to let it fill the frame. We modelled it in brushed metal and let the lighting do the emotional work — warm gold sliding into a bruised pink across the surface. It's a system built to be reskinned release to release without ever losing the shape that makes the label recognisable at a glance.",
+      "Subsoil's droplet mark is the whole brand in miniature, so the brief was to let it fill the frame. We modelled it in brushed metal and let the lighting do the emotional work: warm gold sliding into a bruised pink across the surface. It's a system built to be reskinned release to release without ever losing the shape that makes the label recognisable at a glance.",
   },
   {
     slug: "dirty-notes",
     client: "Dirty Notes Records",
-    title: "Love Fane — Astro Dime",
+    title: "Love Fane (Astro Dime)",
     others: 5,
     process:
-      "Love Fane needed to feel dangerous and romantic in the same breath. We leaned into a distressed red-on-black palette, a jagged display type for the title lockup, and a lipstick mark bleeding off the edge of the label — a small, deliberately crude gesture that keeps the whole thing from feeling too polished for the record inside it.",
+      "Love Fane needed to feel dangerous and romantic in the same breath. We leaned into a distressed red-on-black palette, a jagged display type for the title lockup, and a lipstick mark bleeding off the edge of the label, a small, deliberately crude gesture that keeps the whole thing from feeling too polished for the record inside it.",
   },
   {
     slug: "prbit",
     client: "Prbit Records",
-    title: "Tekno Eurooppa EP — Konerytmi",
+    title: "Tekno Eurooppa EP (Konerytmi)",
     others: 5,
     process:
-      "Konerytmi's name translates roughly to 'machine rhythm,' so the artwork went full technical-manual: line-drawn hardware, a copper-on-black palette, and typography that reads like it was stencilled onto a shipping crate. It's a retro-futurist bit — equal parts Cold War industrial design and Eastern European tekno flyer.",
+      "Konerytmi's name translates roughly to 'machine rhythm,' so the artwork went full technical-manual: line-drawn hardware, a copper-on-black palette, and typography that reads like it was stencilled onto a shipping crate. It's a retro-futurist bit: equal parts Cold War industrial design and Eastern European tekno flyer.",
   },
 ];
 
@@ -87,7 +87,7 @@ const WorkCase = ({ project, index, total }: { project: Project; index: number; 
               <motion.img
                 key={current}
                 src={images[current]}
-                alt={`${project.title} — image ${current + 1}`}
+                alt={`${project.title}, image ${current + 1}`}
                 loading="lazy"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -135,7 +135,7 @@ const HighlightedWork = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-3xl font-light text-foreground sm:text-4xl"
+        className="text-center text-3xl font-light text-foreground sm:text-4xl"
       >
         Selected work
       </motion.h2>

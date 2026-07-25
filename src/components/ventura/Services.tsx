@@ -28,7 +28,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl font-light text-foreground sm:text-4xl"
+          className="text-center text-3xl font-light text-foreground sm:text-4xl"
         >
           Services
         </motion.h2>

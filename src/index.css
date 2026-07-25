@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ventura Design System — Signal on Black
+/* Ventura Design System: Signal on Black.
    All colors MUST be HSL.
 */
 
@@ -69,7 +69,7 @@
   }
 
   /* Placeholder blocks stand in for real artwork/video until the client's
-     final assets are dropped in — the diagonal hatch keeps them from
+     final assets are dropped in. The diagonal hatch keeps them from
      reading as a bug or a broken image. */
   .placeholder-fill {
     background-image: repeating-linear-gradient(
