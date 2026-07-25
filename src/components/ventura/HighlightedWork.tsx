@@ -1,6 +1,16 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
-const PROJECTS = [
+interface Project {
+  slug: string;
+  client: string;
+  title: string;
+  others: number;
+  process: string;
+}
+
+const PROJECTS: Project[] = [
   {
     slug: "remedy",
     client: "Remedy",
@@ -35,6 +45,84 @@ const PROJECTS = [
   },
 ];
 
+const imagesFor = (project: Project) => [
+  `/work/${project.slug}/main.jpg`,
+  ...Array.from({ length: project.others }, (_, i) => `/work/${project.slug}/${String(i + 1).padStart(2, "0")}.jpg`),
+];
+
+const WorkCase = ({ project, index, total }: { project: Project; index: number; total: number }) => {
+  const images = imagesFor(project);
+  const [current, setCurrent] = useState(0);
+
+  const go = (dir: 1 | -1) => setCurrent((c) => (c + dir + images.length) % images.length);
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.7 }}
+      className={index > 0 ? "border-t border-border pt-24" : ""}
+    >
+      <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
+        0{index + 1} <span className="text-border">/</span> 0{total}
+      </span>
+
+      <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,340px)_1fr] lg:items-start">
+        <div>
+          <h3 className="text-2xl font-light text-foreground sm:text-3xl">{project.client}</h3>
+          <p className="mt-1 font-mono text-xs uppercase tracking-[0.15em] text-primary">{project.title}</p>
+          <p className="mt-4 text-pretty text-sm font-light leading-relaxed text-muted-foreground">
+            {project.process}
+          </p>
+        </div>
+
+        <div className="mx-auto w-full max-w-md">
+          <div className="relative aspect-square overflow-hidden rounded-lg border border-border bg-card">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={current}
+                src={images[current]}
+                alt={`${project.title} — image ${current + 1}`}
+                loading="lazy"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.35 }}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </AnimatePresence>
+          </div>
+
+          <div className="mt-4 flex items-center justify-between">
+            <span className="font-mono text-xs text-muted-foreground">
+              {String(current + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
+            </span>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={() => go(-1)}
+                aria-label="Previous image"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => go(1)}
+                aria-label="Next image"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              >
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.article>
+  );
+};
+
 const HighlightedWork = () => {
   return (
     <section id="work" className="container py-24 sm:py-32">
@@ -50,49 +138,7 @@ const HighlightedWork = () => {
 
       <div className="mt-16 flex flex-col gap-24">
         {PROJECTS.map((project, i) => (
-          <motion.article
-            key={project.slug}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
-            className={i > 0 ? "border-t border-border pt-24" : ""}
-          >
-            <div className="mb-6 flex items-baseline justify-between font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
-              <span>
-                0{i + 1} <span className="text-border">/</span> 0{PROJECTS.length}
-              </span>
-            </div>
-
-            <div className="w-full max-w-md overflow-hidden rounded-lg border border-border bg-card sm:max-w-lg">
-              <img
-                src={`/work/${project.slug}/main.jpg`}
-                alt={project.title}
-                loading="lazy"
-                className="block w-full"
-              />
-            </div>
-
-            <div className="mt-8 max-w-2xl">
-              <h3 className="text-2xl font-light text-foreground sm:text-3xl">{project.client}</h3>
-              <p className="mt-1 font-mono text-xs uppercase tracking-[0.15em] text-primary">{project.title}</p>
-              <p className="mt-4 text-pretty text-sm font-light leading-relaxed text-muted-foreground">
-                {project.process}
-              </p>
-            </div>
-
-            <div className="mt-8 flex gap-4 overflow-x-auto pb-2">
-              {Array.from({ length: project.others }).map((_, j) => (
-                <img
-                  key={j}
-                  src={`/work/${project.slug}/${String(j + 1).padStart(2, "0")}.jpg`}
-                  alt={`${project.title} — detail ${j + 1}`}
-                  loading="lazy"
-                  className="h-48 w-48 flex-none rounded-md border border-border object-cover sm:h-56 sm:w-56"
-                />
-              ))}
-            </div>
-          </motion.article>
+          <WorkCase key={project.slug} project={project} index={i} total={PROJECTS.length} />
         ))}
       </div>
     </section>
