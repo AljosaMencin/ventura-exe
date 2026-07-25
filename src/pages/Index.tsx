@@ -1,4 +1,5 @@
 import Nav from "@/components/ventura/Nav";
+import MouseGlow from "@/components/ventura/MouseGlow";
 import Hero from "@/components/ventura/Hero";
 import StudioReel from "@/components/ventura/StudioReel";
 import HighlightedWork from "@/components/ventura/HighlightedWork";
@@ -10,6 +11,7 @@ import Footer from "@/components/ventura/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <MouseGlow />
       <Nav />
       <main>
         <Hero />

@@ -38,11 +38,6 @@
     @apply bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground;
     font-family: "General Sans", system-ui, sans-serif;
     overflow-x: hidden;
-    background-image:
-      radial-gradient(ellipse 1100px 700px at 15% 0%, hsl(var(--primary) / 0.07), transparent 60%),
-      radial-gradient(ellipse 900px 800px at 90% 35%, hsl(var(--primary) / 0.05), transparent 60%),
-      radial-gradient(ellipse 1000px 700px at 10% 85%, hsl(var(--primary) / 0.06), transparent 60%);
-    background-repeat: no-repeat;
   }
 
   h1, h2, h3, h4, h5, h6 {
