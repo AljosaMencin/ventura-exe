@@ -130,12 +130,21 @@ const WorkCase = ({ project, index, total }: { project: Project; index: number; 
 const HighlightedWork = () => {
   return (
     <section id="work" className="container py-24 sm:py-32">
+      <motion.p
+        initial={{ opacity: 0, y: 8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="text-center font-mono text-xs uppercase tracking-[0.3em] text-primary"
+      >
+        Portfolio
+      </motion.p>
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center text-3xl font-light text-foreground sm:text-4xl"
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="mt-3 text-balance text-center text-4xl font-light tracking-tight text-foreground sm:text-5xl lg:text-6xl"
       >
         Selected work
       </motion.h2>
