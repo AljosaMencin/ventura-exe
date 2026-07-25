@@ -9,7 +9,7 @@ import Footer from "@/components/ventura/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Nav />
       <main>
         <Hero />

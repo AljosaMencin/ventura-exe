@@ -5,26 +5,6 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-20">
-      {/* Faint technical scanner motif: concentric rings with a slow rotating scan
-          sweep, a nod to the ".exe" software angle without going full hacker-terminal */}
-      <div aria-hidden className="pointer-events-none absolute -bottom-52 -left-52 h-[34rem] w-[34rem]">
-        <div className="absolute inset-0 rounded-full border border-primary/10" />
-        <div className="absolute inset-16 rounded-full border border-primary/10" />
-        <div className="absolute inset-32 rounded-full border border-primary/10" />
-        <div className="absolute inset-48 rounded-full border border-primary/10" />
-
-        <div className="absolute inset-0 overflow-hidden rounded-full">
-          <div
-            className="absolute inset-0 animate-spin-slow"
-            style={{
-              background: "conic-gradient(from 0deg, transparent 0deg, hsl(var(--primary) / 0.2) 10deg, transparent 34deg)",
-            }}
-          />
-        </div>
-
-        <div className="absolute inset-64 animate-pulse-slow rounded-full bg-primary/25 blur-md" />
-      </div>
-
       <div className="container relative flex flex-col items-center text-center">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
