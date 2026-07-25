@@ -1,5 +1,5 @@
 import Nav from "@/components/ventura/Nav";
-import MouseGlow from "@/components/ventura/MouseGlow";
+import AmbientGlow from "@/components/ventura/AmbientGlow";
 import Hero from "@/components/ventura/Hero";
 import StudioReel from "@/components/ventura/StudioReel";
 import HighlightedWork from "@/components/ventura/HighlightedWork";
@@ -10,8 +10,8 @@ import Footer from "@/components/ventura/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <MouseGlow />
+    <div className="relative min-h-screen">
+      <AmbientGlow />
       <Nav />
       <main>
         <Hero />
