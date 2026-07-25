@@ -1,21 +1,17 @@
 import { motion } from "framer-motion";
-import { Palette, Film, Fingerprint } from "lucide-react";
 
 const SERVICES = [
   {
-    icon: Palette,
     number: "01",
     title: "Artwork",
     items: ["Album covers", "Single art", "Merch graphics"],
   },
   {
-    icon: Film,
     number: "02",
     title: "Video",
     items: ["Music videos", "Visualizers", "Social edits"],
   },
   {
-    icon: Fingerprint,
     number: "03",
     title: "Visual Identity",
     items: ["Brand systems", "Logo & type", "Rollout guidelines"],
@@ -45,34 +41,30 @@ const Services = () => {
           Services
         </motion.h2>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
-          {SERVICES.map(({ icon: Icon, number, title, items }, i) => (
+        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          {SERVICES.map(({ number, title, items }, i) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative min-h-[22rem] overflow-hidden bg-background p-8 transition-colors duration-300 hover:bg-card"
+              className="group flex min-h-[20rem] flex-col justify-between rounded-lg border border-border bg-background p-8 transition-colors duration-300 hover:border-primary hover:bg-primary"
             >
-              <Icon
-                aria-hidden
-                strokeWidth={0.75}
-                className="pointer-events-none absolute -right-8 -top-8 h-44 w-44 text-primary/[0.06] transition-all duration-500 ease-out group-hover:-right-4 group-hover:-top-4 group-hover:text-primary/20 group-hover:rotate-6"
-              />
+              <span className="font-mono text-xs text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/70">
+                {number}
+              </span>
 
-              <div className="relative flex items-center justify-between">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 text-primary">
-                  <Icon className="h-5 w-5" strokeWidth={1.5} />
-                </span>
-                <span className="font-mono text-xs text-muted-foreground">{number}</span>
-              </div>
-
-              <div className="relative mt-32">
-                <h3 className="text-xl font-light text-foreground">{title}</h3>
-                <ul className="mt-4 space-y-2">
+              <div>
+                <h3 className="text-3xl font-light tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary-foreground sm:text-4xl">
+                  {title}
+                </h3>
+                <ul className="mt-6 space-y-1.5">
                   {items.map((item) => (
-                    <li key={item} className="text-sm text-muted-foreground">
+                    <li
+                      key={item}
+                      className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/80"
+                    >
                       {item}
                     </li>
                   ))}
