@@ -14,7 +14,7 @@ const PROJECTS: Project[] = [
   {
     slug: "inner-circle",
     client: "Inner Circle",
-    title: "What Ya Say? (Harmonia)",
+    title: "Logo Design & Visual brand identity",
     others: 4,
     process:
       "Inner Circle needed a system that could scale past a single release without a redesign every time. We built one label template around their circle-of-hands mark (fixed layout, fixed hierarchy) and let the catalogue number and colourway do the differentiating from ICR001 onward. Cream for the debut, acid green for the follow-up: same bones, new mood every time.",
@@ -22,7 +22,7 @@ const PROJECTS: Project[] = [
   {
     slug: "remedy",
     client: "Remedy",
-    title: "Sick Flow",
+    title: "Various Cover Arts",
     others: 4,
     process:
       "Remedy wanted a label mark that could carry a bootleg edit without disappearing into the crate. We built the identity around a single loose, gnashing character, inked by hand and then vectorised just enough to survive small pressings, and paired it with a lettering pass that reads fast on a dim dancefloor. Green-on-black kept every variant instantly recognisable across a run of one-offs.",
@@ -30,7 +30,7 @@ const PROJECTS: Project[] = [
   {
     slug: "subsoil",
     client: "Subsoil Records",
-    title: "Work It EP (Alex Dyer)",
+    title: "Visual brand identity",
     others: 4,
     process:
       "Subsoil's droplet mark is the whole brand in miniature, so the brief was to let it fill the frame. We modelled it in brushed metal and let the lighting do the emotional work: warm gold sliding into a bruised pink across the surface. It's a system built to be reskinned release to release without ever losing the shape that makes the label recognisable at a glance.",
@@ -38,7 +38,7 @@ const PROJECTS: Project[] = [
   {
     slug: "dirty-notes",
     client: "Dirty Notes Records",
-    title: "Love Fane (Astro Dime)",
+    title: "Various Cover Arts",
     others: 5,
     process:
       "Love Fane needed to feel dangerous and romantic in the same breath. We leaned into a distressed red-on-black palette, a jagged display type for the title lockup, and a lipstick mark bleeding off the edge of the label, a small, deliberately crude gesture that keeps the whole thing from feeling too polished for the record inside it.",
@@ -46,7 +46,7 @@ const PROJECTS: Project[] = [
   {
     slug: "prbit",
     client: "Prbit Records",
-    title: "Tekno Eurooppa EP (Konerytmi)",
+    title: "Various Cover Arts",
     others: 5,
     process:
       "Konerytmi's name translates roughly to 'machine rhythm,' so the artwork went full technical-manual: line-drawn hardware, a copper-on-black palette, and typography that reads like it was stencilled onto a shipping crate. It's a retro-futurist bit: equal parts Cold War industrial design and Eastern European tekno flyer.",
