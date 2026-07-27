@@ -37,7 +37,7 @@ const ClientLogos = () => {
               src={logo.src}
               alt={logo.name}
               loading="lazy"
-              className="h-6 w-auto opacity-50 transition-opacity duration-300 hover:opacity-100 sm:h-8"
+              className="h-10 w-auto opacity-50 transition-opacity duration-300 hover:opacity-100 sm:h-12"
             />
           ))}
         </motion.div>
