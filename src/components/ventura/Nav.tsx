@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Instagram, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { asset } from "@/lib/assetUrl";
 
 const LINKS = [
   { label: "Work", href: "#work" },
@@ -18,7 +19,7 @@ const Nav = () => {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md">
       <div className="container flex h-20 items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
-          <img src="/ventura-mark.png" alt="Ventura" className="h-7 w-7" />
+          <img src={asset("/ventura-mark.png")} alt="Ventura" className="h-7 w-7" />
           <span className="font-mono text-base tracking-tight text-foreground">ventura.zip</span>
         </a>
 

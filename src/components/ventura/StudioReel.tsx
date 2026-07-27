@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Volume2, VolumeX } from "lucide-react";
+import { asset } from "@/lib/assetUrl";
 
 const StudioReel = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -29,8 +30,8 @@ const StudioReel = () => {
       >
         <video
           ref={videoRef}
-          src="/videos/reel.mp4"
-          poster="/videos/reel-poster.jpg"
+          src={asset("/videos/reel.mp4")}
+          poster={asset("/videos/reel-poster.jpg")}
           autoPlay
           loop
           muted

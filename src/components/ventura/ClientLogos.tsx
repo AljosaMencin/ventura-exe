@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { asset } from "@/lib/assetUrl";
 
 const LOGOS = [
   { src: "/clients/inner-circle.png", name: "Inner Circle", size: "h-14 sm:h-16" },
@@ -35,7 +36,7 @@ const ClientLogos = () => {
           {LOGOS.map((logo) => (
             <img
               key={logo.name}
-              src={logo.src}
+              src={asset(logo.src)}
               alt={logo.name}
               loading="lazy"
               className={`w-auto opacity-50 transition-opacity duration-300 hover:opacity-100 ${logo.size}`}

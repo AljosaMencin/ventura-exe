@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { asset } from "@/lib/assetUrl";
 
 interface Project {
   slug: string;
@@ -54,8 +55,10 @@ const PROJECTS: Project[] = [
 ];
 
 const imagesFor = (project: Project) => [
-  `/work/${project.slug}/main.jpg`,
-  ...Array.from({ length: project.others }, (_, i) => `/work/${project.slug}/${String(i + 1).padStart(2, "0")}.jpg`),
+  asset(`/work/${project.slug}/main.jpg`),
+  ...Array.from({ length: project.others }, (_, i) =>
+    asset(`/work/${project.slug}/${String(i + 1).padStart(2, "0")}.jpg`),
+  ),
 ];
 
 const WorkCase = ({ project, index, total }: { project: Project; index: number; total: number }) => {
