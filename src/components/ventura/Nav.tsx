@@ -18,7 +18,7 @@ const Nav = () => {
       <div className="container flex h-20 items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
           <img src="/ventura-mark.png" alt="Ventura" className="h-7 w-7" />
-          <span className="font-mono text-sm tracking-tight text-foreground">ventura.exe</span>
+          <span className="font-mono text-base tracking-tight text-foreground">ventura.zip</span>
         </a>
 
         <div className="flex items-center gap-6">

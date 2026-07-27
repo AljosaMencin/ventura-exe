@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container flex flex-col items-center justify-between gap-6 py-10 sm:flex-row">
         <div className="flex items-center gap-2.5">
           <img src="/ventura-mark.png" alt="Ventura" className="h-5 w-5" />
-          <span className="font-mono text-xs text-muted-foreground">ventura.exe</span>
+          <span className="font-mono text-xs text-muted-foreground">ventura.zip</span>
         </div>
 
         <p className="text-xs text-muted-foreground">© {year} Ventura. From sound to vision.</p>

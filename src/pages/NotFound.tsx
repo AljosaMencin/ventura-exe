@@ -5,7 +5,7 @@ const NotFound = () => (
     <p className="font-mono text-sm text-primary">404</p>
     <h1 className="text-2xl font-light">Page not found</h1>
     <Link to="/" className="text-sm text-muted-foreground underline underline-offset-4 hover:text-primary">
-      Back to ventura.exe
+      Back to ventura.zip
     </Link>
   </div>
 );
