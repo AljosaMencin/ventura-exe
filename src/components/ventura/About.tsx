@@ -27,19 +27,29 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className="mx-auto mt-10 max-w-2xl space-y-5 text-pretty text-base font-light leading-relaxed text-muted-foreground"
+        className="mx-auto mt-10 max-w-2xl space-y-5 text-pretty text-center text-base font-light leading-relaxed text-muted-foreground"
       >
         <p>
-          Ventura was founded in 2025 by Aljoša Mencin. He spent four years studying design and
-          working with a run of independent artists and labels, mostly on cover art, before
-          deciding the work deserved a name of its own.
+          Ventura was founded in 2025 by Aljoša Mencin after four years of designing for
+          independent artists and record labels. What started as creating cover art gradually
+          became something bigger: a consistent way of approaching visuals that felt worth giving
+          its own identity.
+        </p>
+        <p>That's where Ventura came from.</p>
+        <p>
+          The idea has always been simple: music deserves visuals that feel just as unique as the
+          sound itself. Instead of following trends or using templates, every project is built
+          from scratch to fit the artist and the story they're trying to tell.
         </p>
         <p>
-          Ventura is that name: a way to define the style properly and push it past the album
-          cover, into video, brand systems and everything else that shapes how a project looks and
-          feels. The studio still runs the way it started, small and hands-on, taking on a limited
-          number of projects at a time so each one gets full attention from first sketch to final
-          file.
+          Although cover art is still at the core of what Ventura does, the goal has always been
+          to go beyond a single image. Motion graphics, visual identities, promotional assets, and
+          creative direction all play a part in building a complete world around a release.
+        </p>
+        <p>
+          Ventura is intentionally kept small, taking on only a limited number of projects at a
+          time. Every piece is designed by hand, from the first concept to the final files, with
+          the attention and care each project deserves.
         </p>
       </motion.div>
     </section>
