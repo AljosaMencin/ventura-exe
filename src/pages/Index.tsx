@@ -6,6 +6,7 @@ import HighlightedWork from "@/components/ventura/HighlightedWork";
 import Services from "@/components/ventura/Services";
 import About from "@/components/ventura/About";
 import Testimonial from "@/components/ventura/Testimonial";
+import ClientLogos from "@/components/ventura/ClientLogos";
 import Contact from "@/components/ventura/Contact";
 import Footer from "@/components/ventura/Footer";
 
@@ -21,6 +22,7 @@ const Index = () => {
         <Services />
         <About />
         <Testimonial />
+        <ClientLogos />
         <Contact />
       </main>
       <Footer />
