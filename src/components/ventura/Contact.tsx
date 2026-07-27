@@ -20,6 +20,8 @@ const Contact = () => {
         <Button asChild size="lg" className="mt-10">
           <a href="mailto:venturadesigns01@gmail.com">venturadesigns01@gmail.com</a>
         </Button>
+
+        <p className="mt-8 font-mono text-xs text-muted-foreground">Founded by Aljoša Mencin (2025)</p>
       </motion.div>
     </section>
   );
