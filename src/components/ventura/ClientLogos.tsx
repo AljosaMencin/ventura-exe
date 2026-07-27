@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
 const LOGOS = [
-  { src: "/clients/inner-circle.png", name: "Inner Circle" },
-  { src: "/clients/subsoil.png", name: "Subsoil Records" },
-  { src: "/clients/dirty-notes.png", name: "Dirty Notes Records" },
-  { src: "/clients/prbit.png", name: "Prbit Records" },
-  { src: "/clients/beaumont.png", name: "Beaumont Records" },
-  { src: "/clients/takmak.png", name: "Takmak Records" },
-  { src: "/clients/inhale-music.png", name: "Inhale Music" },
+  { src: "/clients/inner-circle.png", name: "Inner Circle", size: "h-14 sm:h-16" },
+  { src: "/clients/subsoil.png", name: "Subsoil Records", size: "h-14 sm:h-16" },
+  { src: "/clients/dirty-notes.png", name: "Dirty Notes Records", size: "h-10 sm:h-12" },
+  { src: "/clients/prbit.png", name: "Prbit Records", size: "h-10 sm:h-12" },
+  { src: "/clients/beaumont.png", name: "Beaumont Records", size: "h-10 sm:h-12" },
+  { src: "/clients/takmak.png", name: "Takmak Records", size: "h-6 sm:h-7" },
+  { src: "/clients/inhale-music.png", name: "Inhale Music", size: "h-6 sm:h-7" },
 ];
 
 const ClientLogos = () => {
@@ -37,7 +37,7 @@ const ClientLogos = () => {
               src={logo.src}
               alt={logo.name}
               loading="lazy"
-              className="h-10 w-auto opacity-50 transition-opacity duration-300 hover:opacity-100 sm:h-12"
+              className={`w-auto opacity-50 transition-opacity duration-300 hover:opacity-100 ${logo.size}`}
             />
           ))}
         </motion.div>
