@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 const LOGOS = [
   { src: "/clients/inner-circle.png", name: "Inner Circle", size: "h-14 sm:h-16" },
   { src: "/clients/subsoil.png", name: "Subsoil Records", size: "h-16 sm:h-20" },
-  { src: "/clients/dirty-notes.png", name: "Dirty Notes Records", size: "h-10 sm:h-12" },
-  { src: "/clients/prbit.png", name: "Prbit Records", size: "h-10 sm:h-12" },
+  { src: "/clients/dirty-notes.png", name: "Dirty Notes Records", size: "h-12 sm:h-14" },
+  { src: "/clients/prbit.png", name: "Prbit Records", size: "h-12 sm:h-14" },
   { src: "/clients/beaumont.png", name: "Beaumont Records", size: "h-10 sm:h-12" },
   { src: "/clients/takmak.png", name: "Takmak Records", size: "h-6 sm:h-7" },
-  { src: "/clients/inhale-music.png", name: "Inhale Music", size: "h-6 sm:h-7" },
+  { src: "/clients/inhale-music.png", name: "Inhale Music", size: "h-8 sm:h-9" },
 ];
 
 const ClientLogos = () => {
@@ -29,7 +29,7 @@ const ClientLogos = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8"
+          className="mt-10 grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 sm:grid-cols-4 lg:grid-cols-7"
         >
           {LOGOS.map((logo) => (
             <img
