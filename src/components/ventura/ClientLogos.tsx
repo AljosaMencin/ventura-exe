@@ -8,6 +8,7 @@ const LOGOS = [
   { src: "/clients/beaumont.png", name: "Beaumont Records", size: "h-10 sm:h-12" },
   { src: "/clients/takmak.png", name: "Takmak Records", size: "h-6 sm:h-7" },
   { src: "/clients/inhale-music.png", name: "Inhale Music", size: "h-8 sm:h-9" },
+  { src: "/clients/boogie-house.png", name: "Boogie House", size: "h-14 sm:h-16" },
 ];
 
 const ClientLogos = () => {
@@ -29,7 +30,7 @@ const ClientLogos = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-10 grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 sm:grid-cols-4 lg:grid-cols-7"
+          className="mt-10 grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 sm:grid-cols-4 lg:grid-cols-8"
         >
           {LOGOS.map((logo) => (
             <img
