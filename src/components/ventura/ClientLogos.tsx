@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const LOGOS = [
   { src: "/clients/inner-circle.png", name: "Inner Circle", size: "h-14 sm:h-16" },
-  { src: "/clients/subsoil.png", name: "Subsoil Records", size: "h-14 sm:h-16" },
+  { src: "/clients/subsoil.png", name: "Subsoil Records", size: "h-16 sm:h-20" },
   { src: "/clients/dirty-notes.png", name: "Dirty Notes Records", size: "h-10 sm:h-12" },
   { src: "/clients/prbit.png", name: "Prbit Records", size: "h-10 sm:h-12" },
   { src: "/clients/beaumont.png", name: "Beaumont Records", size: "h-10 sm:h-12" },
