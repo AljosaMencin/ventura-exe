@@ -1,8 +1,8 @@
 const BLOBS = [
-  { top: "5%", left: "12%", size: "38rem", opacity: 0.08, duration: "9s", delay: "0s" },
-  { top: "38%", left: "88%", size: "34rem", opacity: 0.06, duration: "12s", delay: "-4s" },
-  { top: "72%", left: "8%", size: "36rem", opacity: 0.07, duration: "10s", delay: "-7s" },
-  { top: "95%", left: "70%", size: "32rem", opacity: 0.06, duration: "11s", delay: "-2s" },
+  { top: "5%", left: "12%", size: "58rem", opacity: 0.08, duration: "9s", delay: "0s" },
+  { top: "38%", left: "88%", size: "52rem", opacity: 0.06, duration: "12s", delay: "-4s" },
+  { top: "72%", left: "8%", size: "56rem", opacity: 0.07, duration: "10s", delay: "-7s" },
+  { top: "95%", left: "70%", size: "48rem", opacity: 0.06, duration: "11s", delay: "-2s" },
 ];
 
 const AmbientGlow = () => (
