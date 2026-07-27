@@ -14,8 +14,8 @@ const Contact = () => {
         <h2 className="text-balance text-4xl font-light text-foreground sm:text-5xl">
           Got a project in mind?
         </h2>
-        <p className="mt-4 text-muted-foreground">Let's start a conversation.</p>
-        <Button asChild size="lg" className="mt-10">
+        <p className="mt-8 text-muted-foreground">Let's start a conversation.</p>
+        <Button asChild size="lg" className="mt-4">
           <a href="mailto:venturadesigns01@gmail.com">venturadesigns01@gmail.com</a>
         </Button>
       </motion.div>
