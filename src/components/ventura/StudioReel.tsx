@@ -1,13 +1,21 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
+import { Play, Volume2, VolumeX } from "lucide-react";
 
 const StudioReel = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
 
   const play = () => {
     videoRef.current?.play();
+  };
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
   };
 
   return (
@@ -23,13 +31,27 @@ const StudioReel = () => {
           ref={videoRef}
           src="/videos/reel.mp4"
           poster="/videos/reel-poster.jpg"
-          controls={isPlaying}
+          autoPlay
+          loop
+          muted
           playsInline
+          controls={isPlaying}
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
           onClick={() => !isPlaying && play()}
           className="absolute inset-0 h-full w-full cursor-pointer object-cover"
         />
+
+        {isPlaying && (
+          <button
+            type="button"
+            onClick={toggleMute}
+            aria-label={isMuted ? "Unmute studio reel" : "Mute studio reel"}
+            className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background/70 text-foreground backdrop-blur transition-colors hover:border-primary hover:text-primary"
+          >
+            {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+          </button>
+        )}
 
         {!isPlaying && (
           <>
