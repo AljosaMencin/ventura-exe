@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-20">
+    <section id="top" className="relative flex min-h-screen min-h-[100dvh] items-center overflow-hidden pt-20">
       <div className="container relative flex flex-col items-center text-center">
         <motion.p
           initial={{ opacity: 0, y: 8 }}

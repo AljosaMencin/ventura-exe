@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const BLOBS = [
   { top: "5%", left: "12%", size: "92rem", opacity: 0.08, duration: "9s", delay: "0s" },
   { top: "38%", left: "88%", size: "84rem", opacity: 0.06, duration: "12s", delay: "-4s" },
@@ -5,25 +7,41 @@ const BLOBS = [
   { top: "95%", left: "70%", size: "78rem", opacity: 0.06, duration: "11s", delay: "-2s" },
 ];
 
-const AmbientGlow = () => (
-  <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-    {BLOBS.map((blob, i) => (
-      <div
-        key={i}
-        className="absolute animate-pulse-slow rounded-full blur-[100px]"
-        style={{
-          top: blob.top,
-          left: blob.left,
-          width: blob.size,
-          height: blob.size,
-          transform: "translate(-50%, -50%)",
-          background: `radial-gradient(circle, hsl(var(--primary) / ${blob.opacity}), transparent 70%)`,
-          animationDuration: blob.duration,
-          animationDelay: blob.delay,
-        }}
-      />
-    ))}
-  </div>
-);
+const MOBILE_QUERY = "(max-width: 639px)";
+
+const AmbientGlow = () => {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.matchMedia(MOBILE_QUERY).matches,
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia(MOBILE_QUERY);
+    const update = () => setIsMobile(mql.matches);
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
+
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      {BLOBS.map((blob, i) => (
+        <div
+          key={i}
+          className={`absolute animate-pulse-slow rounded-full ${isMobile ? "blur-[50px]" : "blur-[100px]"}`}
+          style={{
+            top: blob.top,
+            left: blob.left,
+            width: isMobile ? `min(${blob.size}, 85vw)` : blob.size,
+            height: isMobile ? `min(${blob.size}, 85vw)` : blob.size,
+            transform: "translate(-50%, -50%)",
+            background: `radial-gradient(circle, hsl(var(--primary) / ${blob.opacity}), transparent 70%)`,
+            animationDuration: blob.duration,
+            animationDelay: blob.delay,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default AmbientGlow;

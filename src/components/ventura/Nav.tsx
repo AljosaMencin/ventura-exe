@@ -16,7 +16,7 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/95 sm:bg-background/70 sm:backdrop-blur-md">
       <div className="container flex h-20 items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
           <img src={asset("/ventura-mark.png")} alt="Ventura" className="h-7 w-7" />
