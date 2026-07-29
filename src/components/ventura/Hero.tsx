@@ -14,8 +14,8 @@ const Hero = () => {
         src={asset("/videos/reel.mp4")}
         className="absolute inset-0 h-full w-full object-cover opacity-[0.18]"
         style={{
-          maskImage: "radial-gradient(ellipse closest-side at center, black 40%, transparent 95%)",
-          WebkitMaskImage: "radial-gradient(ellipse closest-side at center, black 40%, transparent 95%)",
+          maskImage: "radial-gradient(ellipse closest-side at center, black 65%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse closest-side at center, black 65%, transparent 100%)",
         }}
       />
 
