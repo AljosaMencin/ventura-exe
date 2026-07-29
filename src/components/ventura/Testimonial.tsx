@@ -50,7 +50,7 @@ const Testimonial = () => {
         Client feedback
       </motion.h2>
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="scrollbar-hide mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
         {TESTIMONIALS.map((t, i) => (
           <motion.figure
             key={t.name}
@@ -58,7 +58,7 @@ const Testimonial = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="flex flex-col rounded-lg border border-border bg-card p-8"
+            className="flex w-full flex-none snap-center flex-col rounded-lg border border-border bg-card p-8 lg:w-auto"
           >
             <div className="flex gap-0.5 text-primary">
               {Array.from({ length: 5 }).map((_, s) => (
