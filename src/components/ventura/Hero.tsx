@@ -1,11 +1,21 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { asset } from "@/lib/assetUrl";
 
 const Hero = () => {
   return (
     <section id="top" className="relative flex min-h-screen min-h-[100dvh] items-center overflow-hidden pt-20">
-      <div className="container relative flex flex-col items-center text-center">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        src={asset("/videos/reel.mp4")}
+        className="absolute inset-0 h-full w-full object-cover opacity-[0.18]"
+      />
+
+      <div className="container relative z-10 flex flex-col items-center text-center">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
