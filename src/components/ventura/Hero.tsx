@@ -13,6 +13,10 @@ const Hero = () => {
         playsInline
         src={asset("/videos/reel.mp4")}
         className="absolute inset-0 h-full w-full object-cover opacity-[0.18]"
+        style={{
+          maskImage: "radial-gradient(ellipse at center, black 45%, transparent 85%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black 45%, transparent 85%)",
+        }}
       />
 
       <div className="container relative z-10 flex flex-col items-center text-center">
