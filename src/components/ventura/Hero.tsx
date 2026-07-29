@@ -1,23 +1,40 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { asset } from "@/lib/assetUrl";
 
+const MOBILE_QUERY = "(max-width: 639px)";
+
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.matchMedia(MOBILE_QUERY).matches,
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia(MOBILE_QUERY);
+    const update = () => setIsMobile(mql.matches);
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
+
   return (
     <section id="top" className="relative flex min-h-screen min-h-[100dvh] items-center overflow-hidden pt-20">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        src={asset("/videos/reel.mp4")}
-        className="absolute inset-0 h-full w-full object-cover opacity-[0.24]"
-        style={{
-          maskImage: "radial-gradient(ellipse closest-side at center, black, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse closest-side at center, black, transparent 100%)",
-        }}
-      />
+      {!isMobile && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          src={asset("/videos/reel.mp4")}
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.24]"
+          style={{
+            maskImage: "radial-gradient(ellipse closest-side at center, black, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(ellipse closest-side at center, black, transparent 100%)",
+          }}
+        />
+      )}
 
       <div className="container relative z-10 flex flex-col items-center text-center">
         <motion.p
@@ -64,8 +81,8 @@ const Hero = () => {
       </div>
 
       <a
-        href="#reel"
-        aria-label="Scroll to studio reel"
+        href="#work"
+        aria-label="Scroll to selected work"
         className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 text-muted-foreground transition-colors hover:text-primary sm:block"
       >
         <ArrowDown className="h-5 w-5 animate-bounce" />

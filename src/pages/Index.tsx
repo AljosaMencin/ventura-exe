@@ -1,7 +1,6 @@
 import Nav from "@/components/ventura/Nav";
 import AmbientGlow from "@/components/ventura/AmbientGlow";
 import Hero from "@/components/ventura/Hero";
-import StudioReel from "@/components/ventura/StudioReel";
 import HighlightedWork from "@/components/ventura/HighlightedWork";
 import Services from "@/components/ventura/Services";
 import About from "@/components/ventura/About";
@@ -17,7 +16,6 @@ const Index = () => {
       <Nav />
       <main>
         <Hero />
-        <StudioReel />
         <HighlightedWork />
         <Services />
         <About />
