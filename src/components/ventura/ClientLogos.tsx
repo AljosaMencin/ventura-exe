@@ -14,7 +14,7 @@ const LOGOS = [
 
 const ClientLogos = () => {
   return (
-    <section className="border-y border-border py-16">
+    <section className="py-16">
       <div className="container">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
