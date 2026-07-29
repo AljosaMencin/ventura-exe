@@ -1,5 +1,6 @@
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 
 const TESTIMONIALS = [
   {
@@ -29,6 +30,30 @@ const TESTIMONIALS = [
 ];
 
 const Testimonial = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [index, setIndex] = useState(0);
+
+  const scrollToIndex = (i: number) => {
+    const el = scrollRef.current;
+    const card = el?.children[i] as HTMLElement | undefined;
+    card?.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+  };
+
+  const go = (dir: 1 | -1) => {
+    const next = Math.min(Math.max(index + dir, 0), TESTIMONIALS.length - 1);
+    setIndex(next);
+    scrollToIndex(next);
+  };
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.children[0] as HTMLElement | undefined;
+    if (!card) return;
+    const step = card.getBoundingClientRect().width + 24;
+    setIndex(Math.round(el.scrollLeft / step));
+  };
+
   return (
     <section className="container py-24 sm:py-32">
       <motion.p
@@ -50,7 +75,11 @@ const Testimonial = () => {
         Client feedback
       </motion.h2>
 
-      <div className="scrollbar-hide mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="scrollbar-hide mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0"
+      >
         {TESTIMONIALS.map((t, i) => (
           <motion.figure
             key={t.name}
@@ -83,6 +112,30 @@ const Testimonial = () => {
             </figcaption>
           </motion.figure>
         ))}
+      </div>
+
+      <div className="mt-6 flex items-center justify-center gap-4 lg:hidden">
+        <button
+          type="button"
+          onClick={() => go(-1)}
+          disabled={index === 0}
+          aria-label="Previous review"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-30 disabled:hover:border-border disabled:hover:text-muted-foreground"
+        >
+          <ArrowLeft className="h-4 w-4" />
+        </button>
+        <span className="font-mono text-xs text-muted-foreground">
+          {index + 1} / {TESTIMONIALS.length}
+        </span>
+        <button
+          type="button"
+          onClick={() => go(1)}
+          disabled={index === TESTIMONIALS.length - 1}
+          aria-label="Next review"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-30 disabled:hover:border-border disabled:hover:text-muted-foreground"
+        >
+          <ArrowRight className="h-4 w-4" />
+        </button>
       </div>
     </section>
   );
