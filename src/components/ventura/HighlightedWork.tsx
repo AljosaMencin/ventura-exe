@@ -42,7 +42,7 @@ const PROJECTS: Project[] = [
     title: "Various Cover Arts",
     others: 5,
     process:
-      "Love Fane needed to feel dangerous and romantic in the same breath. We leaned into a distressed red-on-black palette, a jagged display type for the title lockup, and a lipstick mark bleeding off the edge of the label, a small, deliberately crude gesture that keeps the whole thing from feeling too polished for the record inside it.",
+      "Dirty Notes Records needed a system that could feel dangerous and romantic depending on the release. We built it around a jagged, scratched-up logotype and a recurring lipstick-and-music-note mark, then let each cover run its own saturated color story: acid pink and halftone pop art for one, deep red and distressed type for another. Different moods, same crooked handwriting underneath.",
   },
   {
     slug: "prbit",
@@ -50,7 +50,7 @@ const PROJECTS: Project[] = [
     title: "Various Cover Arts",
     others: 5,
     process:
-      "Konerytmi's name translates roughly to 'machine rhythm,' so the artwork went full technical-manual: line-drawn hardware, a copper-on-black palette, and typography that reads like it was stencilled onto a shipping crate. It's a retro-futurist bit: equal parts Cold War industrial design and Eastern European tekno flyer.",
+      "Prbit Records covers lean on hand-drawn linework over flat, limited color fields: a wireframe hand for one release, a slouched skeleton and a melting clock for another, technical hardware sketches for a third. The label's small circular mascot mark anchors every one of them, so the artwork always reads as Prbit's even when the subject matter and palette change completely from release to release.",
   },
 ];
 
