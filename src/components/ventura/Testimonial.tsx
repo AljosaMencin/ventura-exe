@@ -125,7 +125,7 @@ const Testimonial = () => {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="scrollbar-hide mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0"
+        className="scrollbar-hide mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2"
       >
         {TESTIMONIALS.map((t, i) => (
           <motion.figure
@@ -134,7 +134,7 @@ const Testimonial = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="flex w-full flex-none snap-center flex-col rounded-lg border border-border bg-card p-8 lg:w-auto"
+            className="flex w-full flex-none snap-center flex-col rounded-lg border border-border bg-card p-8 lg:w-[calc((100%-3rem)/3)]"
           >
             <div className="flex gap-0.5 text-primary">
               {Array.from({ length: 5 }).map((_, s) => (
@@ -161,7 +161,7 @@ const Testimonial = () => {
         ))}
       </div>
 
-      <div className="mt-6 flex items-center justify-center gap-4 lg:hidden">
+      <div className="mt-6 flex items-center justify-center gap-4">
         <button
           type="button"
           onClick={() => go(-1)}
