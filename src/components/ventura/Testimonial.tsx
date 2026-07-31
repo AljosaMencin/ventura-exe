@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 
 const TESTIMONIALS = [
   {
+    id: "bonesukg",
     quote:
       "Aljo goes above and beyond for his customers. He exceeded expectations in every shape and form, and delivered a fantastic piece of work. Communications were second to none, and for the price, the professionalism, creativity, and delivery is well worth every penny.",
     name: "bonesukg",
@@ -12,6 +13,7 @@ const TESTIMONIALS = [
     duration: "3 days",
   },
   {
+    id: "nicky130189",
     quote:
       "Attention to detail is incredible. On time every step of the way, and honestly just great to work with overall. Really appreciated it and looking forward to working together again soon!",
     name: "nicky130189",
@@ -20,12 +22,57 @@ const TESTIMONIALS = [
     duration: "6 days",
   },
   {
+    id: "verenawusatiuk",
     quote:
       "Incredibly happy with the result! Aljo is highly professional and the designs are great. The schedule for this delivery was tight and Aljo was always quick to respond and do adjustments where needed. Would definitely order again!",
     name: "verenawusatiuk",
     flag: "🇦🇹",
     location: "Austria",
     duration: "4 days",
+  },
+  {
+    id: "quintenrcm-1",
+    quote:
+      "Consistently impressed by Aljo's work. He understands the vision immediately, and delivers a final product that actually elevates the project. Highly recommended for anyone who values actual creativity over standard templates.",
+    name: "quintenrcm",
+    flag: "🇳🇱",
+    location: "Netherlands",
+    duration: "2 days",
+  },
+  {
+    id: "quintenrcm-2",
+    quote: "Fantastic work, delivered it super quick, would say it's a homerun! Will definitely come back!",
+    name: "quintenrcm",
+    flag: "🇳🇱",
+    location: "Netherlands",
+    duration: "2 days",
+  },
+  {
+    id: "gavingaughan",
+    quote:
+      "Went above and beyond to understand my creative vision. Took into mind the creative work of the track I sent over and delivered in a reasonable time. Pleasure to work with him and will be using his services again.",
+    name: "gavingaughan",
+    flag: "🇺🇸",
+    location: "United States",
+    duration: "1 day",
+  },
+  {
+    id: "jptakeshi12",
+    quote:
+      "This is the second time I've gone with him because he did such a good job the first time and he did not disappoint the second time round! Love his work, creative, quick and communicates to ensure that you are satisfied with the work. Will definitely be back again in the future, he does not miss.",
+    name: "jptakeshi12",
+    flag: "🇦🇺",
+    location: "Australia",
+    duration: "3 days",
+  },
+  {
+    id: "rokomaji",
+    quote:
+      "Aljo's work on our album cover was incredible, truly EXCEEDING expectations with perfect brand alignment and professionalism. Collaborating with Aljo was a breeze, marked by their POLITENESS and quick responsiveness, showing a DEEP understanding of our needs. Highly recommend! 🙌",
+    name: "rokomaji",
+    flag: "🇬🇧",
+    location: "United Kingdom",
+    duration: "11 days",
   },
 ];
 
@@ -82,7 +129,7 @@ const Testimonial = () => {
       >
         {TESTIMONIALS.map((t, i) => (
           <motion.figure
-            key={t.name}
+            key={t.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
