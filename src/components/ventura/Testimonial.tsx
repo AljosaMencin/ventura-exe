@@ -1,6 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
+
+const DESKTOP_QUERY = "(min-width: 1024px)";
 
 const TESTIMONIALS = [
   {
@@ -79,6 +81,19 @@ const TESTIMONIALS = [
 const Testimonial = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(
+    () => typeof window !== "undefined" && window.matchMedia(DESKTOP_QUERY).matches ? 3 : 1,
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia(DESKTOP_QUERY);
+    const update = () => setCardsPerView(mql.matches ? 3 : 1);
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
+
+  const maxIndex = Math.max(0, TESTIMONIALS.length - cardsPerView);
 
   const scrollToIndex = (i: number) => {
     const el = scrollRef.current;
@@ -87,7 +102,7 @@ const Testimonial = () => {
   };
 
   const go = (dir: 1 | -1) => {
-    const next = Math.min(Math.max(index + dir, 0), TESTIMONIALS.length - 1);
+    const next = Math.min(Math.max(index + dir, 0), maxIndex);
     setIndex(next);
     scrollToIndex(next);
   };
@@ -127,13 +142,9 @@ const Testimonial = () => {
         onScroll={handleScroll}
         className="scrollbar-hide mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2"
       >
-        {TESTIMONIALS.map((t, i) => (
-          <motion.figure
+        {TESTIMONIALS.map((t) => (
+          <figure
             key={t.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
             className="flex w-full flex-none snap-center flex-col rounded-lg border border-border bg-card p-8 lg:w-[calc((100%-3rem)/3)]"
           >
             <div className="flex gap-0.5 text-primary">
@@ -157,7 +168,7 @@ const Testimonial = () => {
                 {t.duration}
               </p>
             </figcaption>
-          </motion.figure>
+          </figure>
         ))}
       </div>
 
@@ -177,7 +188,7 @@ const Testimonial = () => {
         <button
           type="button"
           onClick={() => go(1)}
-          disabled={index === TESTIMONIALS.length - 1}
+          disabled={index === maxIndex}
           aria-label="Next review"
           className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-30 disabled:hover:border-border disabled:hover:text-muted-foreground"
         >
