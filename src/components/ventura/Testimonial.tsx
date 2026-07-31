@@ -183,7 +183,7 @@ const Testimonial = () => {
           <ArrowLeft className="h-4 w-4" />
         </button>
         <span className="font-mono text-xs text-muted-foreground">
-          {index + 1} / {TESTIMONIALS.length}
+          {index + 1} / {maxIndex + 1}
         </span>
         <button
           type="button"
