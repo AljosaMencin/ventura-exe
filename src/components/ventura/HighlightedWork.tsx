@@ -42,7 +42,7 @@ const PROJECTS: Project[] = [
     title: "Various Cover Arts",
     others: 5,
     process:
-      "Dirty Notes Records needed a system that could feel dangerous and romantic depending on the release. We built it around a jagged, scratched-up logotype and a recurring lipstick-and-music-note mark, then let each cover run its own saturated color story: acid pink and halftone pop art for one, deep red and distressed type for another. Different moods, same crooked handwriting underneath.",
+      "The direction for Dirty Notes Records is to keep every cover feeling dangerous and romantic at once. Distressed textures, high-contrast pop-art photo treatments, and a saturated color palette that shifts release to release, while still reading as unmistakably part of the same gritty, unpolished world.",
   },
   {
     slug: "prbit",
@@ -50,7 +50,7 @@ const PROJECTS: Project[] = [
     title: "Various Cover Arts",
     others: 5,
     process:
-      "Prbit Records covers lean on hand-drawn linework over flat, limited color fields: a wireframe hand for one release, a slouched skeleton and a melting clock for another, technical hardware sketches for a third. The label's small circular mascot mark anchors every one of them, so the artwork always reads as Prbit's even when the subject matter and palette change completely from release to release.",
+      "The direction for Prbit Records leans on hand-drawn linework over flat, limited color fields, trading photography for illustration so every release feels a little stranger and more handmade. Subjects and palettes shift from cover to cover, but that linework-first approach keeps everything feeling like it belongs to the same world.",
   },
 ];
 
