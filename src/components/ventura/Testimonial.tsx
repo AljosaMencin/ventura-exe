@@ -80,6 +80,8 @@ const TESTIMONIALS = [
 
 const Testimonial = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const isProgrammaticScroll = useRef(false);
+  const programmaticScrollTimeout = useRef<number>();
   const [index, setIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(
     () => typeof window !== "undefined" && window.matchMedia(DESKTOP_QUERY).matches ? 3 : 1,
@@ -104,10 +106,16 @@ const Testimonial = () => {
   const go = (dir: 1 | -1) => {
     const next = Math.min(Math.max(index + dir, 0), maxIndex);
     setIndex(next);
+    isProgrammaticScroll.current = true;
     scrollToIndex(next);
+    window.clearTimeout(programmaticScrollTimeout.current);
+    programmaticScrollTimeout.current = window.setTimeout(() => {
+      isProgrammaticScroll.current = false;
+    }, 500);
   };
 
   const handleScroll = () => {
+    if (isProgrammaticScroll.current) return;
     const el = scrollRef.current;
     if (!el) return;
     const card = el.children[0] as HTMLElement | undefined;
